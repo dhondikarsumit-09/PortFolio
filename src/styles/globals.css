@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 224 35% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 224 35% 10%;
+    --primary: 200 98% 48%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 220 30% 94%;
+    --secondary-foreground: 224 35% 12%;
+    --muted: 220 30% 94%;
+    --muted-foreground: 220 16% 40%;
+    --accent: 220 30% 92%;
+    --accent-foreground: 224 35% 12%;
+    --destructive: 0 82% 60%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 220 24% 86%;
+    --input: 220 24% 86%;
+    --ring: 199 95% 58%;
+    --radius: 0.9rem;
+  }
+
+  .dark {
+    --background: 225 48% 7%;
+    --foreground: 214 78% 96%;
+    --card: 224 46% 10%;
+    --card-foreground: 214 78% 96%;
+    --primary: 190 100% 56%;
+    --primary-foreground: 222 47% 11%;
+    --secondary: 224 36% 14%;
+    --secondary-foreground: 214 70% 92%;
+    --muted: 224 36% 14%;
+    --muted-foreground: 218 23% 67%;
+    --accent: 224 34% 16%;
+    --accent-foreground: 214 78% 96%;
+    --destructive: 0 72% 54%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 221 34% 22%;
+    --input: 221 34% 22%;
+    --ring: 189 90% 62%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply min-h-screen bg-background font-sans text-foreground antialiased;
+  }
+}
+
+@layer utilities {
+  .section-anchor {
+    scroll-margin-top: 7.75rem;
+  }
+}
