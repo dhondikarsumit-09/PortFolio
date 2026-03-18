@@ -11,6 +11,7 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ project }: ProjectCardProps) {
+  const hasGithubLink = Boolean(project.githubUrl && project.githubUrl !== "#");
   const hasLiveLink = project.liveUrl !== "#";
 
   return (
@@ -41,12 +42,14 @@ export function ProjectCard({ project }: ProjectCardProps) {
         </CardContent>
 
         <CardFooter className="mt-auto flex gap-3">
-          <Button asChild variant="outline" size="sm">
-            <a href={project.githubUrl} target="_blank" rel="noreferrer">
-              <Github className="mr-2 h-4 w-4" />
-              GitHub
-            </a>
-          </Button>
+          {hasGithubLink ? (
+            <Button asChild variant="outline" size="sm">
+              <a href={project.githubUrl} target="_blank" rel="noreferrer">
+                <Github className="mr-2 h-4 w-4" />
+                GitHub
+              </a>
+            </Button>
+          ) : null}
           {hasLiveLink ? (
             <Button asChild size="sm">
               <a href={project.liveUrl} target="_blank" rel="noreferrer">

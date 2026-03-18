@@ -22,7 +22,7 @@ export const profile = {
     "I am a Computer Science Engineering student focused on full stack development with a strong backend foundation.",
     "I enjoy designing practical systems that handle real-time workflows, secure authentication, and production-ready deployments."
   ],
-  resumeUrl: "#"
+  resumeUrl: "https://drive.google.com/file/d/1puUYSE0JNcGkld4dksBKXzcWZlMaAkk6/view?usp=drive_link"
 } as const;
 
 export const heroStats = [
@@ -32,7 +32,6 @@ export const heroStats = [
 ] as const satisfies readonly HeroStat[];
 
 export const socialLinks = [
-  { label: "GitHub", href: "https://github.com/SumitDh09" },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/sumit-dhondikar/" },
   { label: "Email", href: "mailto:dhondikarsumit@gmail.com" }
 ] as const satisfies readonly SocialLink[];

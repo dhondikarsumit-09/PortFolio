@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, Phone } from "lucide-react";
+import { Linkedin, Mail, Phone } from "lucide-react";
 import { SectionWrapper } from "@/components/section-wrapper";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -12,7 +12,6 @@ import { fadeUp, popIn, staggerContainer } from "@/lib/animations";
 const contactLinks = [
   { icon: Mail, label: "Email", value: profile.email, href: `mailto:${profile.email}` },
   { icon: Linkedin, label: "LinkedIn", value: "Connect on LinkedIn", href: "https://www.linkedin.com/in/sumit-dhondikar/" },
-  { icon: Github, label: "GitHub", value: "View Repositories", href: "https://github.com/SumitDh09" },
   { icon: Phone, label: "Phone", value: profile.phone, href: `tel:${profile.phone.replace(/[^\d+]/g, "")}` }
 ] as const;
 

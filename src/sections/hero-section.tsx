@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { motion, useReducedMotion } from "framer-motion";
 import { ArrowRight, Download, Mail } from "lucide-react";
 import profileMark from "@/assets/profile-mark.svg";
 import { Badge } from "@/components/ui/badge";
@@ -7,7 +8,56 @@ import { Card, CardContent } from "@/components/ui/card";
 import { heroStats, profile, socialLinks } from "@/data/profile";
 import { fadeUp, sectionViewport, staggerContainer } from "@/lib/animations";
 
+const roleHeadlines = [profile.role, "Backend Systems Engineer", "Full Stack Product Builder"] as const;
+
 export function HeroSection() {
+  const shouldReduceMotion = useReducedMotion();
+  const [headlineIndex, setHeadlineIndex] = useState(0);
+  const [typedRole, setTypedRole] = useState("");
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    if (shouldReduceMotion) {
+      setTypedRole(roleHeadlines[0]);
+      if (headlineIndex !== 0) {
+        setHeadlineIndex(0);
+      }
+      if (isDeleting) {
+        setIsDeleting(false);
+      }
+      return;
+    }
+
+    const currentHeadline = roleHeadlines[headlineIndex];
+    const hasCompletedTyping = typedRole === currentHeadline;
+    const hasFinishedDeleting = typedRole.length === 0;
+    const timeoutMs = isDeleting ? 45 : hasCompletedTyping ? 1300 : 74;
+
+    const timeoutId = window.setTimeout(() => {
+      if (!isDeleting && !hasCompletedTyping) {
+        setTypedRole(currentHeadline.slice(0, typedRole.length + 1));
+        return;
+      }
+
+      if (!isDeleting && hasCompletedTyping) {
+        setIsDeleting(true);
+        return;
+      }
+
+      if (isDeleting && !hasFinishedDeleting) {
+        setTypedRole(currentHeadline.slice(0, typedRole.length - 1));
+        return;
+      }
+
+      setIsDeleting(false);
+      setHeadlineIndex((index) => (index + 1) % roleHeadlines.length);
+    }, timeoutMs);
+
+    return () => window.clearTimeout(timeoutId);
+  }, [headlineIndex, isDeleting, shouldReduceMotion, typedRole]);
+
+  const displayedRole = shouldReduceMotion ? roleHeadlines[0] : typedRole;
+
   return (
     <section id="home" className="section-anchor grid items-start gap-12 lg:grid-cols-[1.1fr_0.9fr]">
       <motion.div variants={staggerContainer} initial="hidden" animate="visible" className="space-y-8">
@@ -19,7 +69,17 @@ export function HeroSection() {
           <h1 className="font-display text-4xl font-semibold tracking-tight md:text-6xl">
             {profile.name}
             <span className="mt-3 block bg-gradient-to-r from-cyan-300 via-sky-300 to-fuchsia-300 bg-clip-text text-2xl text-transparent md:text-3xl">
-              {profile.role}
+              <span className="inline-flex min-h-[1.2em] items-center">
+                {displayedRole}
+                {shouldReduceMotion ? null : (
+                  <motion.span
+                    aria-hidden
+                    className="ml-1 inline-block h-[0.95em] w-px bg-cyan-200 align-[-0.08em]"
+                    animate={{ opacity: [1, 1, 0, 0] }}
+                    transition={{ duration: 1.05, ease: "linear", repeat: Number.POSITIVE_INFINITY }}
+                  />
+                )}
+              </span>
             </span>
           </h1>
 

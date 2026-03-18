@@ -31,7 +31,7 @@ export interface ProjectItem {
   description: string;
   highlights: string[];
   stack: string[];
-  githubUrl: string;
+  githubUrl?: string;
   liveUrl: string;
 }
 
