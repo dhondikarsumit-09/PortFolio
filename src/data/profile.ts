@@ -7,7 +7,6 @@ export const navItems = [
   { id: "projects", label: "Projects" },
   { id: "experience", label: "Experience" },
   { id: "stats", label: "Stats" },
-  { id: "testimonials", label: "Testimonials" },
   { id: "blog", label: "Blog" },
   { id: "contact", label: "Contact" }
 ] as const satisfies readonly NavItem[];

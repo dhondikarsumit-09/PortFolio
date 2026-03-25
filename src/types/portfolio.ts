@@ -5,7 +5,6 @@ export type SectionId =
   | "projects"
   | "experience"
   | "stats"
-  | "testimonials"
   | "blog"
   | "contact";
 

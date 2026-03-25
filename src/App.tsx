@@ -11,7 +11,6 @@ import { HeroSection } from "@/sections/hero-section";
 import { ProjectsSection } from "@/sections/projects-section";
 import { SkillsSection } from "@/sections/skills-section";
 import { StatsSection } from "@/sections/stats-section";
-import { TestimonialsSection } from "@/sections/testimonials-section";
 import { navItems } from "@/data/profile";
 import { useActiveSection } from "@/hooks/use-active-section";
 import { useLocomotiveScroll } from "@/hooks/use-locomotive-scroll";
@@ -100,7 +99,6 @@ function App() {
         <ProjectsSection />
         <ExperienceSection />
         <StatsSection />
-        <TestimonialsSection />
         <BlogSection />
         <ContactSection />
       </main>
