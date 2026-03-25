@@ -163,21 +163,21 @@ export function HeroSection() {
                 </div>
               </div>
 
-            <div className="overflow-hidden rounded-[1.8rem] border border-white/10 bg-[#15182b] p-5 shadow-[0_20px_60px_-36px_rgba(15,23,42,0.9)]">
+            <div className="overflow-hidden rounded-[1.8rem] border border-slate-200/70 bg-white/80 p-5 shadow-[0_20px_60px_-36px_rgba(15,23,42,0.18)] backdrop-blur-xl dark:border-white/10 dark:bg-[#15182b] dark:shadow-[0_20px_60px_-36px_rgba(15,23,42,0.9)]">
               <div className="mb-4 flex items-center gap-2">
                 <span className="h-3 w-3 rounded-full bg-rose-400" />
                 <span className="h-3 w-3 rounded-full bg-amber-300" />
                 <span className="h-3 w-3 rounded-full bg-emerald-400" />
               </div>
-              <div className="space-y-3 font-mono text-sm leading-relaxed text-slate-200">
+              <div className="space-y-3 font-mono text-sm leading-relaxed text-slate-700 dark:text-slate-200">
                 <p>
-                  <span className="text-sky-300">String</span> core = <span className="text-emerald-300">"Spring Boot"</span>;
+                  <span className="text-sky-600 dark:text-sky-300">String</span> core = <span className="text-emerald-600 dark:text-emerald-300">"Spring Boot"</span>;
                 </p>
                 <p>
-                  <span className="text-sky-300">String</span> focus = <span className="text-amber-200">"real-time systems"</span>;
+                  <span className="text-sky-600 dark:text-sky-300">String</span> focus = <span className="text-amber-600 dark:text-amber-200">"real-time systems"</span>;
                 </p>
                 <p>
-                  <span className="text-sky-300">String</span> principle = <span className="text-emerald-300">"fundamentals first"</span>;
+                  <span className="text-sky-600 dark:text-sky-300">String</span> principle = <span className="text-emerald-600 dark:text-emerald-300">"fundamentals first"</span>;
                 </p>
               </div>
             </div>
