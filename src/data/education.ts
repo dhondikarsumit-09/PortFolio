@@ -15,4 +15,4 @@ export const education = [
     score: "Score: 84.4%",
     location: "Multai, Madhya Pradesh"
   }
-] as const satisfies readonly EducationItem[];
+]as const satisfies readonly EducationItem[];
