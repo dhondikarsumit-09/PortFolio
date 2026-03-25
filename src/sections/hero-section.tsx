@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { heroStats, profile, socialLinks } from "@/data/profile";
-import { fadeUp, sectionViewport, staggerContainer } from "@/lib/animations";
+import { fadeUp, sectionViewport, slowFloat, staggerContainer } from "@/lib/animations";
 
 const roleHeadlines = [profile.role, "Backend Systems Engineer", "Full Stack Product Builder"] as const;
 
@@ -59,9 +59,9 @@ export function HeroSection() {
   const displayedRole = shouldReduceMotion ? roleHeadlines[0] : typedRole;
 
   return (
-    <section id="home" className="section-anchor grid items-start gap-12 lg:grid-cols-[1.1fr_0.9fr]">
+    <section id="home" className="section-anchor grid items-start gap-12 lg:grid-cols-[1.1fr_0.9fr]" data-scroll-section>
       <motion.div variants={staggerContainer} initial="hidden" animate="visible" className="space-y-8">
-        <motion.div variants={fadeUp} className="space-y-5">
+        <motion.div variants={fadeUp} className="space-y-5" data-scroll data-scroll-speed="-0.08">
           <Badge className="rounded-full bg-cyan-400/90 px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-slate-950">
             Available for Full-Time & Internship Roles
           </Badge>
@@ -89,7 +89,7 @@ export function HeroSection() {
           </p>
         </motion.div>
 
-        <motion.div variants={fadeUp} className="flex flex-wrap gap-3">
+        <motion.div variants={fadeUp} className="flex flex-wrap gap-3" data-scroll data-scroll-speed="-0.03">
           <Button asChild size="lg" className="rounded-full">
             <a href="#projects">
               View Projects
@@ -126,11 +126,13 @@ export function HeroSection() {
       </motion.div>
 
       <motion.div
-        variants={fadeUp}
+        variants={slowFloat}
         initial="hidden"
         whileInView="visible"
         viewport={sectionViewport}
         className="space-y-5"
+        data-scroll
+        data-scroll-speed="0.12"
       >
         <Card className="border-border/70 bg-card/80">
           <CardContent className="space-y-5 p-6">

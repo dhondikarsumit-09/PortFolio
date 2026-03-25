@@ -18,7 +18,7 @@ export function ThemeToggle({ theme, onToggle }: ThemeToggleProps) {
       variant="ghost"
       aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
       onClick={onToggle}
-      className="rounded-full border border-border/70 bg-background/40"
+      className="rounded-full"
     >
       <motion.span
         initial={false}

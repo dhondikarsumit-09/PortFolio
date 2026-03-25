@@ -1,4 +1,13 @@
-export type SectionId = "home" | "about" | "skills" | "projects" | "achievements" | "education" | "contact";
+export type SectionId =
+  | "home"
+  | "about"
+  | "skills"
+  | "projects"
+  | "experience"
+  | "stats"
+  | "testimonials"
+  | "blog"
+  | "contact";
 
 export interface NavItem {
   id: SectionId;
@@ -29,6 +38,9 @@ export interface SkillCategory {
 export interface ProjectItem {
   title: string;
   description: string;
+  challenge: string;
+  solution: string;
+  impact: string;
   highlights: string[];
   stack: string[];
   githubUrl?: string;
@@ -47,4 +59,31 @@ export interface AchievementItem {
   title: string;
   year: string;
   detail: string;
+}
+
+export interface ExperienceItem {
+  title: string;
+  period: string;
+  summary: string;
+  detail: string;
+}
+
+export interface StatItem {
+  value: string;
+  label: string;
+  detail: string;
+}
+
+export interface TestimonialItem {
+  name: string;
+  role: string;
+  quote: string;
+  status: "available" | "placeholder";
+}
+
+export interface BlogItem {
+  title: string;
+  summary: string;
+  tag: string;
+  status: string;
 }

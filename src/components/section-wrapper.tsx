@@ -18,6 +18,8 @@ export function SectionWrapper({ id, label, title, description, className, child
     <motion.section
       id={id}
       className={cn("section-anchor space-y-10", className)}
+      data-scroll
+      data-scroll-section
       variants={fadeUp}
       initial="hidden"
       whileInView="visible"

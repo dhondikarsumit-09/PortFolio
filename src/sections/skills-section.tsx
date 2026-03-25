@@ -35,7 +35,7 @@ export function SkillsSection() {
           const Icon = iconByCategory[group.category];
           return (
             <motion.div key={group.category} variants={popIn}>
-              <Card className="h-full border-border/70 bg-card/70">
+              <Card className="h-full border-border/70 bg-card/70" data-scroll data-scroll-speed="0.03">
                 <CardHeader className="space-y-3">
                   <span className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-cyan-500/15 text-cyan-300">
                     <Icon className="h-5 w-5" />

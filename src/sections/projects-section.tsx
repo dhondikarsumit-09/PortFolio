@@ -9,8 +9,8 @@ export function ProjectsSection() {
     <SectionWrapper
       id="projects"
       label="Projects"
-      title="Professional projects with backend-heavy implementation."
-      description="A focused selection of systems I designed and developed using Spring Boot, React, and Java."
+      title="Case studies that show how I think about backend architecture, product flows, and execution."
+      description="Each project is framed as a compact case study with the problem, technical approach, and measurable engineering outcome."
     >
       <motion.div
         variants={staggerContainer}
