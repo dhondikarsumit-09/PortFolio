@@ -16,7 +16,7 @@ export const profile = {
   name: "Sumit Dhondikar",
   role: "Full Stack Developer",
   tagline:
-    "I build scalable, real-time products using Java, Spring Boot, React, and robust backend architectures.",
+    "Developer with hands-on experience across frontend, backend, databases, and deployment.",
   location: "Betul, Madhya Pradesh, India",
   email: "dhondikarsumit@gmail.com",
   phone: "+91-7489998165",
@@ -35,5 +35,6 @@ export const heroStats = [
 
 export const socialLinks = [
   { label: "LinkedIn", href: "https://www.linkedin.com/in/sumit-dhondikar/" },
+  { label: "LeetCode", href: "https://leetcode.com/u/Sumit_0905/" },
   { label: "Email", href: "mailto:dhondikarsumit@gmail.com" }
 ] as const satisfies readonly SocialLink[];

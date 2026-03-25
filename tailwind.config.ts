@@ -54,8 +54,8 @@ const config: Config = {
         display: ["Sora", "Inter", "system-ui", "sans-serif"]
       },
       boxShadow: {
-        glow: "0 0 0 1px hsl(var(--border)), 0 16px 60px -24px rgba(56, 189, 248, 0.45)",
-        glass: "0 16px 60px -32px rgba(15, 23, 42, 0.55)"
+        glow: "0 0 0 1px hsl(var(--border)), 0 18px 44px -24px rgba(99, 102, 241, 0.28)",
+        glass: "0 18px 44px -28px rgba(67, 56, 202, 0.3)"
       },
       backgroundImage: {
         "grid-soft":

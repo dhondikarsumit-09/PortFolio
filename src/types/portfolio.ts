@@ -86,4 +86,5 @@ export interface BlogItem {
   summary: string;
   tag: string;
   status: string;
+  href?: string;
 }

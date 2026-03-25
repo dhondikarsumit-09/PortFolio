@@ -32,6 +32,9 @@ export function SectionWrapper({ id, label, title, description, className, child
         <h2 className="font-display text-3xl font-semibold tracking-tight md:text-4xl">{title}</h2>
         {description ? <p className="max-w-3xl text-base text-muted-foreground md:text-lg">{description}</p> : null}
       </div>
+      <div className="relative h-px overflow-hidden rounded-full bg-border/30">
+        <div className="absolute inset-y-0 left-0 w-1/3 rounded-full bg-gradient-to-r from-blue-500/70 via-indigo-500/70 to-purple-500/70 blur-[1px]" />
+      </div>
       {children}
     </motion.section>
   );

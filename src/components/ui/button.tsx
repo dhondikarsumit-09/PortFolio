@@ -4,12 +4,12 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/cn";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center whitespace-nowrap rounded-lg text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/70 focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50",
+  "magnetic inline-flex items-center justify-center whitespace-nowrap rounded-lg text-sm font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/70 focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:opacity-50 active:scale-[0.98]",
   {
     variants: {
       variant: {
         default:
-          "bg-primary text-primary-foreground shadow-sm hover:brightness-110 active:brightness-95 dark:shadow-[0_0_0_1px_rgba(125,211,252,0.24),0_12px_30px_-12px_rgba(56,189,248,0.65)]",
+          "bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-500 text-primary-foreground shadow-glow hover:brightness-110 active:brightness-95",
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         outline: "glass-pill hover:bg-accent/40 hover:text-accent-foreground",
         ghost: "glass-pill border-transparent bg-transparent shadow-none hover:bg-accent/40 hover:text-accent-foreground",
@@ -38,7 +38,7 @@ export interface ButtonProps
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, asChild = false, ...props }, ref) => {
     const Comp = asChild ? Slot : "button";
-    return <Comp className={cn(buttonVariants({ variant, size, className }))} ref={ref} {...props} />;
+    return <Comp className={cn(buttonVariants({ variant, size, className }))} data-magnetic ref={ref} {...props} />;
   }
 );
 Button.displayName = "Button";

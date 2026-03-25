@@ -21,14 +21,20 @@ export function TestimonialsSection() {
         className="grid gap-5 lg:grid-cols-2"
       >
         {testimonials.map((item, index) => (
-          <motion.div key={`${item.name}-${index}`} variants={popIn}>
-            <Card className="h-full">
+          <motion.div
+            key={`${item.name}-${index}`}
+            variants={popIn}
+            whileHover={{ y: -8 }}
+            whileTap={{ scale: 0.985, y: -2 }}
+            transition={{ type: "spring", stiffness: 240, damping: 20 }}
+          >
+            <Card className="h-full transition-colors hover:border-primary/30">
               <CardContent className="space-y-5 p-6">
                 <div className="flex items-center justify-between gap-3">
-                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-cyan-500/15 text-cyan-300">
+                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-primary/12 text-primary">
                     <Quote className="h-5 w-5" />
                   </span>
-                  <span className="glass-pill rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
+                  <span className="rounded-full border bg-secondary px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-muted-foreground">
                     {item.status === "placeholder" ? "Placeholder" : "Verified"}
                   </span>
                 </div>

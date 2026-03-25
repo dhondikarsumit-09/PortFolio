@@ -22,20 +22,20 @@ export function ExperienceSection() {
       >
         {experience.map((item) => (
           <motion.article key={`${item.title}-${item.period}`} variants={popIn} className="relative pl-10">
-            <span className="absolute left-1.5 top-2 h-4 w-4 rounded-full border border-cyan-300/80 bg-cyan-400/70 shadow-[0_0_0_5px_rgba(56,189,248,0.16)]" />
-            <Card className="glass-panel-strong overflow-hidden">
+            <span className="absolute left-1.5 top-2 h-4 w-4 rounded-full border border-primary/40 bg-primary/75 shadow-[0_0_0_5px_rgba(92,70,56,0.12)]" />
+            <Card className="overflow-hidden">
               <CardContent className="p-6">
                 <div className="flex flex-wrap items-start justify-between gap-3">
                   <div className="space-y-3">
-                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-cyan-500/15 text-cyan-300">
+                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-primary/12 text-primary">
                       <BriefcaseBusiness className="h-5 w-5" />
                     </span>
                     <div>
                       <h3 className="font-display text-xl font-semibold">{item.title}</h3>
-                      <p className="mt-1 text-sm text-cyan-300">{item.summary}</p>
+                      <p className="mt-1 text-sm text-primary">{item.summary}</p>
                     </div>
                   </div>
-                  <span className="glass-pill rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+                  <span className="rounded-full border bg-secondary px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
                     {item.period}
                   </span>
                 </div>

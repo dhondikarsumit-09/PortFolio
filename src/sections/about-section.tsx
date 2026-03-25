@@ -20,7 +20,7 @@ export function AboutSection() {
       description="From Java fundamentals to full stack projects, I focus on systems that are secure, scalable, and user-centric."
     >
       <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
-        <Card className="border-border/70 bg-card/70">
+        <Card>
           <CardContent className="space-y-4 p-6">
             {profile.shortAbout.map((paragraph) => (
               <p key={paragraph} className="text-sm leading-relaxed text-muted-foreground md:text-base">
@@ -33,8 +33,8 @@ export function AboutSection() {
         <motion.div variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
           <div className="grid gap-4">
             {focusAreas.map((item) => (
-              <motion.article key={item.title} variants={popIn} className="rounded-xl border border-border/70 bg-card/70 p-5">
-                <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-cyan-500/15 text-cyan-300">
+              <motion.article key={item.title} variants={popIn} className="rounded-xl border bg-card p-5 shadow-sm">
+                <div className="mb-3 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-primary/12 text-primary">
                   <item.icon className="h-5 w-5" />
                 </div>
                 <h3 className="font-display text-lg font-semibold">{item.title}</h3>
